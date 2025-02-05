@@ -1,6 +1,30 @@
-<div class="main-content">
-  <p class="text" *ngIf="currentIndex === 1">{{text1}}</p>
-  <p class="text" *ngIf="currentIndex === 2">{{text2}}</p>
-  <p class="text" *ngIf="currentIndex === 3">{{text3}}</p>
-  <p class="text" *ngIf="currentIndex === 4">{{text4}}</p>
+<div class="main-content display-5">
+  <p class="text easyInForwards" *ngIf="currentIndex === 0">{{text1}}</p>
+  <p class="text easyInForwards" *ngIf="currentIndex === 1">{{text2}}</p>
+  <p class="text easyInForwards" *ngIf="currentIndex === 2">{{text3}}</p>
+  <p class="text easyInForwards" *ngIf="currentIndex === 3">{{text4}}</p>
+  <div class="main-content" *ngIf="showImage && !isOui">
+    <p class="text-with-image comeTowardsUs text-center"><i>La Saint Valentin</i></p>
+    <img
+      class="image comeTowardsUs"
+      ngSrc="assets/images/stvalentin.png"
+      alt=""
+      height="500" width="500"/>
+    <div *ngIf="isQuestion" class="d-flex flex-column">
+      <p class="text-small easyInForwards">Veux-tu être ma valentine ?</p>
+      <div class="easyInForwards d-flex flex-row justify-content-evenly">
+        <button class="btn btn-yes" (click)="accept()">Oui</button>
+        <button id="btn-no" class="btn btn-no" (mouseenter)="teleportButton()">Non</button>
+        <button id="btn-decoy" class="btn-decoy"></button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isOui" class="d-flex flex-column align-items-center">
+    <p class="text text-center">RDV le 14 février à 17h30 pour une petite surprise ;)</p>
+    <img
+      src="assets/images/pipi.jpg"
+      class="image"
+      alt=""
+    />
+  </div>
 </div>
