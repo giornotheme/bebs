@@ -1,0 +1,23 @@
+.main-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  font-family: Apple Chancery, cursive;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
